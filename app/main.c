@@ -15,7 +15,7 @@ typedef struct _GlobalInput {
     char*           appName;
 } GlobalInput;
 
-static void run_command (FlobalInput* app);
+static void run_command (GlobalInput* app);
 
 static GlobalInput app;
 
@@ -48,7 +48,7 @@ int main (int argc, char* argv[])
     return 0;
 }
 
-static void run_command (FlobalInput* app)
+static void run_command (GlobalInput* app)
 {
 
 }

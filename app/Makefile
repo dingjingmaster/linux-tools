@@ -1,12 +1,13 @@
 cflag = -w
 
 current_dir = $(shell pwd)
-src = $(wildcard *.c library/*/*.c)
+src = $(wildcard *.c module/*.c module/*/*.c library/*/*.c)
 obj = $(patsubst %.c, %.o, $(src))
 target = graceful-linux-command-tools
 
 libs = \
-	-Ilibrary/
+	-Imodule/					\
+	-Ilibrary/					\
 
 all:$(target)
 
