@@ -1,16 +1,20 @@
 cflag = -w
 
+current_dir = $(shell pwd)
 src = $(wildcard *.c library/*/*.c)
 obj = $(patsubst %.c, %.o, $(src))
 target = graceful-linux-command-tools
 
+libs = \
+	-Ilibrary/
+
 all:$(target)
 
 $(target):$(obj)
-	cc -o $@ $^ $(cflag) `pkg-config --cflags --libs glib-2.0`
+	cc -o $@ $^ $(cflag) $(libs) `pkg-config --cflags --libs glib-2.0`
 
 %.o:%.c
-	cc -o $@ -c $^ $(cflag) `pkg-config --cflags --libs glib-2.0`
+	cc -o $@ -c $^ $(cflag) $(libs) `pkg-config --cflags --libs glib-2.0`
 
 .PHONY:clean all
 
