@@ -16,4 +16,4 @@ $(target):$(obj)
 
 clean:
 	@rm -fr $(target)
-	@rm `find . -name "*.o"`
+	@rm -fr `find . -name "*.o"`
