@@ -1,6 +1,6 @@
 cflag = -w
 
-src = $(wildcard *.c)
+src = $(wildcard *.c library/*/*.c)
 obj = $(patsubst %.c, %.o, $(src))
 target = graceful-linux-command-tools
 
